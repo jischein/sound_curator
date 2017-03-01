@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
+
+    <link type="text/css" rel="stylesheet" href="styles/style.css" />
+    <link type="text/css" rel="stylesheet" href="styles/main_style.css" />
+    <title>SoundCurator</title>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://connect.soundcloud.com/sdk/sdk-3.1.2.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Share+Tech+Mono' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+
+
+    <script src="scripts/curator.js"></script>
+    <script src="scripts/api.js"></script>
+</head>
+
+<body>
+    <p id="about-tag">about</p>
+    <div id="about-overlay" class="overlay">
+        <a href="javascript:void(0)" id="close-btn">&times;</a>
+      <h1>About</h1>
+      <p>
+        this is a soundcloud curator that generates 20 song playlists at a time. it automates the tedious process of scrolling through the users that you follow on soundcloud and their likes to discover new music. soundcurator feeds those likes right to you.
+      </p>
+      <p>
+        you can add these songs to your own soundcloud profile as a playlist in addition to being able to generate more songs.
+      </p>
+    </br>
+      <p>
+        YOU MUST BE FOLLOWING AT LEAST 6 USERS ON SOUNDCLOUD FOR THE APPLICATION TO WORK. please feel free to email me @ scheinjacob@gmail.com with any bugs.</p>
+        <p>
+          also, big thanks to Lyrie Wang for designing the logo.
+      </p>
+      <p>have fun</p>
+        <a href="http://jacobschein.me">
+          <p id="sign-off">-Jacob</p>
+        </a>
+    </div>
+    <div class="header-content" id="intro">
+        <div class="logo-tagline">
+          <img src="assets/official-logo.png"></img>
+          <h1 id="title">SoundCurator</h1>
+        </div>
+        <h3 id="header-description">discover music you probably haven't heard before.</h3>
+        <h3 id="error-message">you must be following at least six users on soundcloud to proceed</h3>
+        <div id="loader">
+        </div>
+        <p id="loader-tag">C U R A T I N G</p>
+        <button id="button-enter" type="submit">enter</button>
+    </div>
+
+    <section>
+
+        <div class="content">
+            <ul>
+            </ul>
+        </div>
+
+        <div id="loader-2">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="options">
+          <div class="wrapper">
+            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+          	 viewBox="0 0 98.5 98.5" enable-background="new 0 0 98.5 98.5" xml:space="preserve">
+            <path class="checkmark" fill="none" stroke-width="8" stroke-miterlimit="10" d="M81.7,17.8C73.5,9.3,62,4,49.2,4
+          	C24.3,4,4,24.3,4,49.2s20.3,45.2,45.2,45.2s45.2-20.3,45.2-45.2c0-8.6-2.4-16.6-6.5-23.4l0,0L45.6,68.2L24.7,47.3"/>
+            </svg>
+          </div>
+          <button class="option-btn" id="save">save playlist</button>
+          <button class="option-btn" id="more">more music</button>
+        </div>
+    </section>
+</body>
+
+</html>
