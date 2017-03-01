@@ -33,6 +33,9 @@ body {
   margin-top: 60px;
   width: 24rem;
   margin: 0 auto; }
+  @media screen and (max-width: 900px) {
+    .header-content .logo-tagline {
+      margin-top: 30px; } }
 .header-content h1 {
   font-family: 'Lato';
   text-align: center;
