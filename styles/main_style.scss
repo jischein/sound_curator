@@ -176,7 +176,7 @@ img{
 .options{
   display:none;
   width:20rem;
-  margin: 0 auto;
+  margin: 0 auto 10px auto;
 
   .option-btn{
     @include anim;

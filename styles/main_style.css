@@ -118,7 +118,7 @@ img {
 .options {
   display: none;
   width: 20rem;
-  margin: 0 auto; }
+  margin: 0 auto 10px auto; }
   .options .option-btn {
     -webkit-transition: all 0.2s ease;
     -moz-transition: all 0.2s ease;
