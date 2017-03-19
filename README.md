@@ -1,3 +1,4 @@
 # sound_curator
-soundcloud playlist generat0r \n
+soundcloud playlist generat0r 
+
 http://soundcurator.co
