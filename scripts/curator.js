@@ -224,6 +224,7 @@ $(document).ready(function() {
       getFollowing();
     });
 
+    //saving a playlist UI
     $("#save").click(function(){
       console.log("CLICKED");
       var dateObj = new Date();
@@ -236,9 +237,31 @@ $(document).ready(function() {
             console.log(response)
           }
         });
-        $(".wrapper").show();
-        $("#save").hide();
 
+        //access playlist url
+        SC.get('/me/playlists', { limit: 1 }).then(function(playlist){
+            var curated_url = playlist[0].permalink_url;
+            $("#save").hide();
+            $("#saved-modal").fadeTo(0.5, 1, function(){
+              $("#saved-modal").show();
+              $("#curated-link").attr("href", curated_url);
+              $("#curated-link").html(curated_url);
+            });
+
+
+
+	          console.log(playlist[0].permalink_url)
+        });
+        // $(".wrapper").show();
+
+    });
+
+    $("#close-btn2").click(function(){
+      $("#saved-modal").fadeTo(0.5, 0);
+      setTimeout(function(){
+        $("#saved-modal").hide();
+      }, 250)
+      $("#save").show();
     });
 
     $("#about-tag").click(function(){

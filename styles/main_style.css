@@ -269,40 +269,56 @@ img {
     text-decoration: underline; }
 
 .save-overlay {
-  height: 40vh;
+  height: 55vh;
   width: 55vw;
   position: fixed;
   z-index: 1;
   top: 25%;
   left: 22.5vw;
   background-color: black;
-  background-color: rgba(0, 0, 0, 0.93);
+  background-color: white;
   transition: 0.5s;
-  opacity: 1;
-  overflow-y: scroll; }
+  opacity: 0;
+  overflow-y: scroll;
+  border-radius: 15px;
+  border: 2px solid black;
+  padding-bottom: 20px;
+  display: none; }
   .save-overlay .break {
-    border-bottom: 5px solid #818181; }
+    height: 55%;
+    background-color: black;
+    color: white; }
+    .save-overlay .break svg {
+      width: 125px;
+      height: 125px;
+      padding-top: 7.5%;
+      display: block;
+      margin: 0 auto; }
+      .save-overlay .break svg path {
+        stroke: white; }
+  .save-overlay .explanation {
+    text-align: center; }
   .save-overlay h1 {
     text-decoration: none;
-    font-size: 2.25rem;
-    max-width: 237px;
-    color: #818181;
+    font-size: 2.55rem;
+    color: black;
+    text-align: center;
     display: block;
     transition: 0.3s;
-    font-family: 'Futura-Normal';
+    font-family: 'Inconsolata';
     margin: 0 auto;
-    padding-bottom: 7px; }
+    margin-bottom: 20px; }
   .save-overlay p {
     text-decoration: none;
-    color: #818181;
+    color: black;
     display: block;
     transition: 0.3s;
     max-width: 40em;
     line-height: 1.6em;
     font-family: 'Inconsolata';
     margin: 0 auto;
-    margin-top: 20px;
-    font-size: 1.3rem; }
+    font-size: 1.7rem;
+    text-align: center; }
     @media screen and (max-width: 442px) {
       .save-overlay p {
         max-width: 85%; } }
@@ -311,14 +327,18 @@ img {
     -moz-transition: all 0.2s ease;
     transition: all 0.2s ease;
     position: absolute;
-    font-size: 40px;
+    font-size: 80px;
     right: 17px;
+    top: -35px;
     text-decoration: none;
     color: #818181; }
     .save-overlay #close-btn2:hover {
       color: #fff; }
   .save-overlay a {
-    text-decoration: none; }
+    text-decoration: none;
+    line-height: 1.6em;
+    font-family: 'Inconsolata';
+    font-size: 1.3rem; }
 
 #about-tag {
   cursor: pointer;
