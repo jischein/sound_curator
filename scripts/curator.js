@@ -14,7 +14,6 @@ $(document).ready(function() {
     // Login handler
     var user_perma;
     $("#button-enter").click(function() {
-        console.log("yo");
         SC.connect().then(function() {
             return SC.get('/me');
         }).then(function(me) {
@@ -63,16 +62,13 @@ $(document).ready(function() {
               following_users = following_users.filter(function(item, pos) {
                   return following_users.indexOf(item) == pos;
               });
-
-
-              console.log(following_users);
               getTracksOnward(following_users, follower1, [], 0);
             }
             else{
               $("#error-message").show();
             }
         },function(error){
-            console.log("error on soundcloud's side: " + error);
+
             //restart process for now if given 500 soundcloud side error
             getFollowing();
         });
@@ -84,15 +80,11 @@ $(document).ready(function() {
     function getTracksOnward(users, user, tracks, page) {
 
         var trackLimit = 100;
-        console.log("getTracksOnward we are in");
-        console.log(users, user);
-        console.log(tracks + " IN TRACKS ONWARDS");
         SC.get('/users/' + user.permalink + '/favorites', {
             limit: trackLimit
         }).then(function(favorites) {
 
         },function(error){
-            console.log("error on soundcloud's side: " + error);
             //restart process for now if given 500 soundcloud side error
             getFollowing();
         });
@@ -101,24 +93,19 @@ $(document).ready(function() {
             limit: trackLimit,
             linked_partitioning: 1
         }).then(function(favorites) {
-            console.log(favorites.next_href + "NEXT HREF");
             tracks = tracks.concat(favorites.collection);
             grabData(favorites.next_href, tracks, user, users, page + 1);
 
         },
         function(error){
-          console.log("error on soundcloud's side: " + error);
           //restart process for now if given 500 soundcloud side error
           getFollowing();
         });
     }
 
     function grabData(url, cur_trax, cur_user, users, page) {
-        console.log("INSIDE GRABDATA ");
-        console.log(url);
 
         if (!url || page > 3) {
-            console.log("DONE scraping " + cur_user.permalink);
             //look at index of user we are currently scraping
             var cur_index = users.indexOf(cur_user);
             //if at end of following users list stop, if not keep scraping with current tracks passed as param as well
@@ -130,9 +117,6 @@ $(document).ready(function() {
                 var set = {};
                 set = playlist.map(function(track) { return {id: track.id} });
                 window.set = set;
-
-                console.log("now we're actually done - here are the scraped tracks" + cur_trax);
-                console.log(playlist.length);
                 $("#loader").hide();
                 $("#loader-tag").hide();
                 $("#loader-2").hide();
@@ -142,14 +126,11 @@ $(document).ready(function() {
 
         } else {
             $.getJSON(url, function(data) {
-                console.log(data);
                 cur_trax = cur_trax.concat(data.collection);
 
                 if (data.next_href && data.length != 0) {
                     grabData(data.next_href, cur_trax, cur_user, users, page + 1);
                 } else {
-                    console.log("DONE looking at " + cur_user.permalink);
-                    console.log(cur_trax);
                     //look at index of user we are currently scraping
                     var cur_index = users.indexOf(cur_user);
                     //if at end of following users list stop, if not keep scraping with current tracks passed as param as well
@@ -163,8 +144,6 @@ $(document).ready(function() {
                         window.set = set;
 
                         $('body').data('playlist', set);
-                        console.log("now we're actually done - here are the scraped tracks" + cur_trax);
-                        console.log(playlist.length);
                         $("#loader").hide();
                         $("#loader-tag").hide();
                         $("#loader-2").hide();
@@ -183,8 +162,6 @@ $(document).ready(function() {
     // function for rendering playlists
     // s/o this project for helping me write this render method https://github.com/aaron235/SoundVane
     function renderTracks(tracks, ind) {
-
-        console.log("rendering... ")
         var container = document.querySelector(".content ul");
 
         var trackLi = document.createElement("li");
@@ -195,7 +172,6 @@ $(document).ready(function() {
         container.appendChild(trackLi);
 
         var trackWidget = SC.Widget(trackLi.firstChild);
-        console.log("IND, " + ind + "TRACKS.LENGTH - " + tracks.length)
         if (ind == tracks.length - 1){
           $(".options").show();
           $("#save").show();
@@ -226,7 +202,6 @@ $(document).ready(function() {
 
     //saving a playlist UI
     $("#save").click(function(){
-      console.log("CLICKED");
       var dateObj = new Date();
       var month = dateObj.getUTCMonth() + 1; //months from 1-12
       var day = dateObj.getUTCDate();
@@ -234,7 +209,6 @@ $(document).ready(function() {
       var newDate = month + "/" + day + "/" + year;
         SC.post('/playlists', {
           playlist: { title: 'SoundCurator Playlist' + " - " + newDate, tracks: window.set }, function(response){
-            console.log(response)
           }
         });
 
@@ -247,10 +221,6 @@ $(document).ready(function() {
               $("#curated-link").attr("href", curated_url);
               $("#curated-link").html(curated_url);
             });
-
-
-
-	          console.log(playlist[0].permalink_url)
         });
         // $(".wrapper").show();
 
