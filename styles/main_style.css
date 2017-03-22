@@ -39,7 +39,8 @@
   font-weight: light; }
 body {
   margin: 0;
-  color: #252120; }
+  color: #252120;
+  background-color: #FFEEE4; }
 
 .header-content .logo-tagline {
   margin-top: 60px;
@@ -85,7 +86,7 @@ body {
   -moz-transition: all 0.2s ease;
   transition: all 0.2s ease;
   border-radius: 40px;
-  background-color: #FFF;
+  background-color: #FFEEE4;
   border-color: #BDBDBD;
   color: black;
   width: 130px;
@@ -101,7 +102,8 @@ body {
   margin-top: 40px; }
   #button-enter:hover {
     background-color: black;
-    color: #FFF; }
+    color: #FFEEE4;
+    border-color: #FFEEE4; }
 
 img {
   display: inline-block !important;
@@ -143,9 +145,9 @@ img {
     text-decoration: none;
     text-align: center;
     text-transform: uppercase;
-    background-color: white;
+    background-color: #FFEEE4;
     color: black;
-    border: 1px solid #BDBDBD;
+    border: 1px solid black;
     font-size: 14px;
     cursor: pointer;
     vertical-align: top;
@@ -153,8 +155,8 @@ img {
     border-radius: 4px; }
     .options .option-btn:hover {
       background-color: black;
-      color: white;
-      border: 1px solid black; }
+      color: #FFEEE4;
+      border: 1px solid #FFEEE4; }
 
 #save {
   margin-right: 15px; }
@@ -162,7 +164,7 @@ img {
 #loader {
   border: 8px solid black;
   /* BLACK */
-  border-top: 8px solid white;
+  border-top: 8px solid #FFEEE4;
   /* WHITE S / 0 M O N O H R O ME */
   border-radius: 50%;
   width: 120px;
@@ -276,7 +278,7 @@ img {
   top: 25%;
   left: 22.5vw;
   background-color: black;
-  background-color: white;
+  background-color: #FFEEE4;
   transition: 0.5s;
   opacity: 0;
   overflow-y: scroll;
@@ -295,7 +297,7 @@ img {
       display: block;
       margin: 0 auto; }
       .save-overlay .break svg path {
-        stroke: white; }
+        stroke: #FFEEE4; }
   .save-overlay .explanation {
     text-align: center; }
   .save-overlay h1 {
@@ -307,7 +309,8 @@ img {
     transition: 0.3s;
     font-family: 'Inconsolata';
     margin: 0 auto;
-    margin-bottom: 20px; }
+    margin-bottom: 20px;
+    margin-top: 10px; }
   .save-overlay p {
     text-decoration: none;
     color: black;
