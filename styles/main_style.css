@@ -171,6 +171,10 @@ img {
   animation-iteration-count: infinite;
   animation-direction: normal;
   animation-fill-mode: forwards;
+  -webkit-animation: pulse 3s infinite;
+  /* Safari 4+ */
+  -moz-animation: pulse 3s infinite;
+  /* Fx 5+ */
   background-color: #fe4365;
   border-radius: 50%; }
 
@@ -379,6 +383,52 @@ img {
   100% {
     stroke-dashoffset: 0; } }
 @keyframes pulse {
+  0% {
+    opacity: 1;
+    transform: scale(0.3, 0.3); }
+  5% {
+    background-color: #99f19e; }
+  25% {
+    transform: scale(0.8, 0.8);
+    background-color: #99f19e; }
+  50% {
+    transform: scale(0.8, 0.8);
+    background-color: #99f19e; }
+  65% {
+    transform: scale(0.3, 0.3);
+    background-color: #fe4365; }
+  75% {
+    opacity: 1;
+    background-color: #fe4365;
+    transform: scale(0.3, 0.3); }
+  100% {
+    opacity: 1;
+    background-color: #fe4365;
+    transform: scale(0.3, 0.3); } }
+@-moz-keyframes pulse {
+  0% {
+    opacity: 1;
+    transform: scale(0.3, 0.3); }
+  5% {
+    background-color: #99f19e; }
+  25% {
+    transform: scale(0.8, 0.8);
+    background-color: #99f19e; }
+  50% {
+    transform: scale(0.8, 0.8);
+    background-color: #99f19e; }
+  65% {
+    transform: scale(0.3, 0.3);
+    background-color: #fe4365; }
+  75% {
+    opacity: 1;
+    background-color: #fe4365;
+    transform: scale(0.3, 0.3); }
+  100% {
+    opacity: 1;
+    background-color: #fe4365;
+    transform: scale(0.3, 0.3); } }
+@-webkit-keyframes pulse {
   0% {
     opacity: 1;
     transform: scale(0.3, 0.3); }

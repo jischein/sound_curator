@@ -240,12 +240,15 @@ img{
   width: 9rem;
   height: 9rem;
   margin: 20px auto;
+
   animation-name: pulse;
   animation-duration: 3s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
   animation-direction: normal;
   animation-fill-mode: forwards;
+  -webkit-animation: pulse 3s infinite; /* Safari 4+ */
+  -moz-animation:   pulse 3s infinite; /* Fx 5+ */
   background-color: $pink-loader;
   border-radius: 50%;
   // @media screen and (max-width: $break-small){
@@ -531,6 +534,80 @@ img{
 }
 
 @keyframes pulse {
+  0% {
+    opacity: 1;
+    transform: scale(0.3, 0.3);
+  }
+
+  5%{
+    background-color:$secondary-loader;
+  }
+
+  25%{
+      transform: scale(0.8, 0.8);
+      background-color:$secondary-loader;
+  }
+
+  50%{
+      transform: scale(0.8, 0.8);
+      background-color:$secondary-loader;
+  }
+
+  65%{
+      transform: scale(0.3, 0.3);
+      background-color:$pink-loader;
+  }
+  75% {
+    opacity: 1;
+    background-color:$pink-loader;
+    transform: scale(0.3, 0.3);
+  }
+
+  100% {
+    opacity: 1;
+    background-color: $pink-loader;
+    transform: scale(0.3, 0.3);
+  }
+}
+
+@-moz-keyframes pulse {
+  0% {
+    opacity: 1;
+    transform: scale(0.3, 0.3);
+  }
+
+  5%{
+    background-color:$secondary-loader;
+  }
+
+  25%{
+      transform: scale(0.8, 0.8);
+      background-color:$secondary-loader;
+  }
+
+  50%{
+      transform: scale(0.8, 0.8);
+      background-color:$secondary-loader;
+  }
+
+  65%{
+      transform: scale(0.3, 0.3);
+      background-color:$pink-loader;
+  }
+  75% {
+    opacity: 1;
+    background-color:$pink-loader;
+    transform: scale(0.3, 0.3);
+  }
+
+  100% {
+    opacity: 1;
+    background-color: $pink-loader;
+    transform: scale(0.3, 0.3);
+  }
+}
+
+@-webkit-keyframes pulse {
   0% {
     opacity: 1;
     transform: scale(0.3, 0.3);
