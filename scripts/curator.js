@@ -19,7 +19,7 @@ $(document).ready(function() {
         }).then(function(me) {
             $("#button-enter").hide();
             $("#loader").show();
-            $("#loader-tag").show();
+            // $("#loader-tag").show();
             getFollowing();
 
         });

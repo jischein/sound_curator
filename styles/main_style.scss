@@ -2,6 +2,8 @@ $primary-font-stack: 'Roboto', Helvetica, Arial, sans-serif;
 $break-medium: 900px;
 $break-small: 442px;
 
+$pink-loader: #fe4365;
+$secondary-loader: #99f19e;
 
 /* latin-ext */
 @font-face {
@@ -235,20 +237,20 @@ img{
 }
 
 #loader {
-  border: 8px solid black; /* BLACK */
-  border-top: 8px solid #FFEEE4; /* WHITE S / 0 M O N O H R O ME */
+  width: 9rem;
+  height: 9rem;
+  margin: 20px auto;
+  animation-name: pulse;
+  animation-duration: 3s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+  animation-fill-mode: forwards;
+  background-color: $pink-loader;
   border-radius: 50%;
-  width: 120px;
-  height: 120px;
-  animation: spin 2s linear infinite;
-  margin-top:45px;
-  // margin-left:18.5%;
-  margin: 45px auto 0 auto;
-  display:none;
-
-  @media screen and (max-width: $break-small){
-    margin-left:32%;
-  }
+  // @media screen and (max-width: $break-small){
+  //   margin-left:32%;
+  // }
 
 }
 #loader-tag{
@@ -377,7 +379,7 @@ img{
 }
 
 .save-overlay{
-  height: 55vh;
+  min-height: 55vh;
   width: 55vw;
   position: fixed;
   z-index: 1;
@@ -405,6 +407,7 @@ img{
       width:125px;
       height:125px;
       padding-top:7.5%;
+      padding-bottom:7.5%;
       display:block;
       margin:0 auto;
 
@@ -524,5 +527,42 @@ img{
   }
   100% {
     stroke-dashoffset: 0;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+    transform: scale(0.3, 0.3);
+  }
+
+  5%{
+    background-color:$secondary-loader;
+  }
+
+  25%{
+      transform: scale(0.8, 0.8);
+      background-color:$secondary-loader;
+  }
+
+  50%{
+      transform: scale(0.8, 0.8);
+      background-color:$secondary-loader;
+  }
+
+  65%{
+      transform: scale(0.3, 0.3);
+      background-color:$pink-loader;
+  }
+  75% {
+    opacity: 1;
+    background-color:$pink-loader;
+    transform: scale(0.3, 0.3);
+  }
+
+  100% {
+    opacity: 1;
+    background-color: $pink-loader;
+    transform: scale(0.3, 0.3);
   }
 }

@@ -162,20 +162,17 @@ img {
   margin-right: 15px; }
 
 #loader {
-  border: 8px solid black;
-  /* BLACK */
-  border-top: 8px solid #FFEEE4;
-  /* WHITE S / 0 M O N O H R O ME */
-  border-radius: 50%;
-  width: 120px;
-  height: 120px;
-  animation: spin 2s linear infinite;
-  margin-top: 45px;
-  margin: 45px auto 0 auto;
-  display: none; }
-  @media screen and (max-width: 442px) {
-    #loader {
-      margin-left: 32%; } }
+  width: 9rem;
+  height: 9rem;
+  margin: 20px auto;
+  animation-name: pulse;
+  animation-duration: 3s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+  animation-fill-mode: forwards;
+  background-color: #fe4365;
+  border-radius: 50%; }
 
 #loader-tag {
   margin-top: 20px;
@@ -271,7 +268,7 @@ img {
     text-decoration: underline; }
 
 .save-overlay {
-  height: 55vh;
+  min-height: 55vh;
   width: 55vw;
   position: fixed;
   z-index: 1;
@@ -294,6 +291,7 @@ img {
       width: 125px;
       height: 125px;
       padding-top: 7.5%;
+      padding-bottom: 7.5%;
       display: block;
       margin: 0 auto; }
       .save-overlay .break svg path {
@@ -380,5 +378,28 @@ img {
     stroke-dashoffset: 745.74853515625; }
   100% {
     stroke-dashoffset: 0; } }
+@keyframes pulse {
+  0% {
+    opacity: 1;
+    transform: scale(0.3, 0.3); }
+  5% {
+    background-color: #99f19e; }
+  25% {
+    transform: scale(0.8, 0.8);
+    background-color: #99f19e; }
+  50% {
+    transform: scale(0.8, 0.8);
+    background-color: #99f19e; }
+  65% {
+    transform: scale(0.3, 0.3);
+    background-color: #fe4365; }
+  75% {
+    opacity: 1;
+    background-color: #fe4365;
+    transform: scale(0.3, 0.3); }
+  100% {
+    opacity: 1;
+    background-color: #fe4365;
+    transform: scale(0.3, 0.3); } }
 
 /*# sourceMappingURL=main_style.css.map */
